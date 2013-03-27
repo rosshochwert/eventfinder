@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   
-  #require 'koala'
+  require 'koala'
 
   def new
   end

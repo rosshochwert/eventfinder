@@ -34,6 +34,7 @@ gem 'jquery-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'twitter-bootstrap-rails'
+gem 'koala'
 gem 'heroku'
 
 # To use ActiveModel has_secure_password

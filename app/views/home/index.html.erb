@@ -1,1 +1,7 @@
+<h1>Welcome</h1>
 <%= link_to "Connect With Facebook", "/auth/facebook" %>
+<% if current_user %>
+<p> Welcome my name is <%= current_user.first_name %></p>
+<% else %>
+<p>Sign in bit</p>
+<% end %>
