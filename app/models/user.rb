@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :provider, :uid, :user_id, :first_name
 
+
+#for each user that comes through, fill in the following data.
+#@param auth comes from the sessions_controller. Pulls all of the data in form of a hash. Organizes it here. 
 def self.create_with_omniauth(auth)
 	create! do |user|
 		user.provider = auth["provider"]
