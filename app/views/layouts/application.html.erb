@@ -26,11 +26,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Eventfinder</a>
+          <a class="brand" href="#">EventFinder</a>
           <div class="container-fluid nav-collapse pull-right">
           <ul class="nav">
               <% if current_user %>
-              <li>Welcome, <img src="<%= picture %>" id="main_avatar"> <%= current_user.name %></li>
+              <li>Welcome, <img src="<%= current_user.user_image %>" id="main_avatar"> <%= current_user.name %></li>
               <li><%= link_to "Sign out", "/logout"  %></li>
               <% else %>
               <li><%= link_to "Sign in with Facebook", "/auth/Facebook" %></li>

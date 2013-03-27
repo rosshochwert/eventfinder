@@ -8,7 +8,7 @@ def self.create_with_omniauth(auth)
 		user.fb_access_token = auth['credentials']['token']
         user.name = auth["info"]["name"]
         user.first_name = auth["info"]["first_name"]
-        user.image = auth["info"]["image"]
+        user.user_image = auth["info"]["image"]
     end
 end
 
