@@ -1,8 +1,8 @@
 class HomeController < ApplicationController
-helper_method: picture
-helper_method: try
-helper_method: events
-helper_method: log?
+helper_method :picture
+helper_method :try
+helper_method :events
+helper_method :log?
 
 def index
 end
