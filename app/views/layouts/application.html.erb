@@ -30,7 +30,7 @@
           <div class="container-fluid nav-collapse pull-right">
           <ul class="nav">
               <% if current_user %>
-              <li>Welcome, <img src="<%= current_user.image %>" id="main_avatar"> <%= current_user.name %></li>
+              <li>Welcome, <img src="<%= picture %>" id="main_avatar"> <%= current_user.name %></li>
               <li><%= link_to "Sign out", "/logout"  %></li>
               <% else %>
               <li><%= link_to "Sign in with Facebook", "/auth/Facebook" %></li>

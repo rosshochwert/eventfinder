@@ -5,3 +5,15 @@
 <% else %>
 <p>Sign in bit</p>
 <% end %>
+
+<h1>Map</h1>
+<img src="<%= picture %>" id="main_avatar">
+<% if log? %>
+	<p>These are the events you have been invited to.</p>
+	<p><%= try %></p>
+	<p>These are the events you are attending.</p>
+	<p><%= events %></p>
+
+<% else %>
+	<p>Please login to see this fun!</p>
+<% end %>
