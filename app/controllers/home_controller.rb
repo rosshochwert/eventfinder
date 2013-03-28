@@ -45,7 +45,7 @@ end
 def try
 	if session["fb_access_token"].present?
 	@fql = Koala::Facebook::API.new(session["fb_access_token"])
-	fql = @fql.fql_query("SELECT eid FROM event_member WHERE uid = me()")
+	fql = @fql.fql_query("SELECT eid, rsvp_status FROM event_member WHERE uid = me()")
 	end
 end
 
