@@ -11,7 +11,7 @@ end
 
 #if logged in, instantiate a new Koala client. This is Koala. @graph is our client. We shove parameters in and get facebook infromation out.
 #we shoved in 'me' as the person to research (me defaults to current_user). get_picture method gets the profile pic of the user.
-
+def picture
 	if session["fb_access_token"].present?
 		@graph = Koala::Facebook::API.new(session["fb_access_token"])
    		@profile_image = @graph.get_picture("me")
@@ -43,9 +43,10 @@ end
 #I copied that code from someone online, but it basically checks the rsvp_status of each EID a person (UID) is a "part of," or event member which is really just invitations.
 #pretty clever.
 def try
+
 	if session["fb_access_token"].present?
 	@fql = Koala::Facebook::API.new(session["fb_access_token"])
-	fql = @fql.fql_query("SELECT eid, rsvp_status FROM event_member WHERE uid = me()")
+	fql = @fql.fql_query("SELECT eid FROM event_member WHERE uid = me()")
 	end
 end
 
