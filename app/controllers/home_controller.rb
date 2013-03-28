@@ -38,14 +38,14 @@ def log?
 end
 
 #named try because i was desperate
-#third time we set up a Koala client. HOWEVER, this time we use it for an FQL query, not a Open Graph Query. Instead of doing graph.get, we do fql_query
+#third time we set up a Koala client. HOWEVER, this time we use it for an FQL query, not a Open Graph Query. Instead of doing graph.get_blank, we do fql.fql_query
 #fql query is basically a different more encapsulating way of doing open graph
 #I copied that code from someone online, but it basically checks the rsvp_status of each EID a person (UID) is a "part of," or event member which is really just invitations.
 #pretty clever.
 def try
 	if session["fb_access_token"].present?
 	@fql = Koala::Facebook::API.new(session["fb_access_token"])
-	fql = @fql.fql_query("SELECT eid, rsvp_status FROM event_member WHERE uid = me()")
+	fql = @fql.fql_query("SELECT eid FROM event_member WHERE uid = me()")
 	end
 end
 
